@@ -1,25 +1,44 @@
+name: Update GitHub Stats
+
+# Trigger: daily at midnight UTC & manual run
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+# Allow workflow to push updates
+permissions:
+  contents: write
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
 
+      # 2️⃣ Fetch GitHub contributions via GraphQL
       - name: Fetch contributions (GraphQL)
         run: |
+          mkdir -p public/data
           echo '{"query":"{ user(login: \"Shubham-168\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { color contributionCount date } } } } } }"}' > query.json
           curl -s -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
             -X POST https://api.github.com/graphql -d @query.json \
             > public/data/github-stats.json
 
+      # 3️⃣ Fetch repositories list via REST API
       - name: Fetch repos (REST)
         run: |
+          mkdir -p public/data
           curl -s "https://api.github.com/users/Shubham-168/repos?per_page=100" \
             > public/data/repos.json
 
-      - name: Commit and push updated data
+      # 4️⃣ Commit and push updated JSON files
+      - name: Commit and push updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
