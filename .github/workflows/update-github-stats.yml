@@ -1,19 +1,6 @@
-name: Update GitHub Stats
-
-# Allow manual & scheduled runs
-on:
-  schedule:
-    - cron: "0 0 * * *"       # runs daily at midnight UTC (adjust if you want)
-  workflow_dispatch:         # allows manual run from the Actions UI
-
-# Need permission to write contents so the workflow can commit updated json files
-permissions:
-  contents: write
-
 jobs:
   update-stats:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,10 +9,7 @@ jobs:
 
       - name: Fetch contributions (GraphQL)
         run: |
-          # create JSON query file to avoid escaping complexity
-          cat > query.json <<'GRAPHQL'
-{"query":"{ user(login: \"Shubham-168\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { color contributionCount date } } } } } }"}
-GRAPHQL
+          echo '{"query":"{ user(login: \"Shubham-168\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { color contributionCount date } } } } } }"}' > query.json
           curl -s -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
             -X POST https://api.github.com/graphql -d @query.json \
             > public/data/github-stats.json
@@ -40,6 +24,5 @@ GRAPHQL
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/github-stats.json public/data/repos.json
-          # commit only when there are changes
           git diff --quiet --exit-code || git commit -m "chore: update GitHub stats"
           git push origin HEAD:main
