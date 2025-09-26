@@ -3,8 +3,8 @@ name: Update GitHub Stats
 # Trigger: daily at midnight UTC & manual run
 on:
   schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *"   # daily at midnight UTC
+  workflow_dispatch:       # allows manual run from Actions tab
 
 # Allow workflow to push updates
 permissions:
@@ -26,15 +26,17 @@ jobs:
         run: |
           mkdir -p public/data
           echo '{"query":"{ user(login: \"Shubham-168\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { color contributionCount date } } } } } }"}' > query.json
-          curl -s -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -X POST https://api.github.com/graphql -d @query.json \
+          curl -v -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -X POST https://api.github.com/graphql \
+            -d @query.json \
             > public/data/github-stats.json
 
       # 3️⃣ Fetch repositories list via REST API
       - name: Fetch repos (REST)
         run: |
           mkdir -p public/data
-          curl -s "https://api.github.com/users/Shubham-168/repos?per_page=100" \
+          curl -v -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/users/Shubham-168/repos?per_page=100" \
             > public/data/repos.json
 
       # 4️⃣ Commit and push updated JSON files
