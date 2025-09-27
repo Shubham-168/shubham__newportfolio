@@ -62,14 +62,14 @@ export default function GitStats() {
         const langCount = {};
         let total = 0;
 
-        repos.forEach((repo) => {
+        repos?.forEach((repo) => {
             if (repo.language) {
                 langCount[repo.language] = (langCount[repo.language] || 0) + 1;
                 total++;
             }
         });
 
-        const langData = Object.entries(langCount).map(([lang, count]) => ({
+        const langData = Object.entries(langCount)?.map(([lang, count]) => ({
             language: lang,
             percent: ((count / total) * 100).toFixed(1),
         }));
@@ -117,19 +117,19 @@ export default function GitStats() {
                 <VStack spacing={1} align="center" mb={6}>
                     {Array.from({ length: 7 }).map((_, dayIndex) => (
                         <HStack key={dayIndex} spacing={1}>
-                            {heatmap.weeks.map((week, wi) => {
-                                const day = week.contributionDays[dayIndex];
+                            {heatmap?.weeks?.map((week, wi) => {
+                                const day = week?.contributionDays[dayIndex];
                                 return day ? (
                                     <Tooltip
                                         key={wi}
-                                        label={`${day.contributionCount} contributions on ${day.date}`}
+                                        label={`${day?.contributionCount} contributions on ${day?.date}`}
                                         aria-label="contribution tooltip"
                                     >
                                         <Box
                                             w="12px"
                                             h="12px"
                                             borderRadius="2px"
-                                            bg={day.color}
+                                            bg={day?.color}
                                             transition="all 0.3s"
                                             _hover={{ transform: "scale(1.2)" }}
                                         />
@@ -148,18 +148,18 @@ export default function GitStats() {
                         Top Languages
                     </Heading>
                     <VStack spacing={2} align="stretch">
-                        {languages.map((lang, i) => (
+                        {languages?.map((lang, i) => (
                             <Box key={i}>
                                 <HStack justify="space-between" mb={1}>
                                     <Text fontSize="sm" fontWeight="medium">
-                                        {lang.language}
+                                        {lang?.language}
                                     </Text>
                                     <Text fontSize="xs" color="gray.500">
-                                        {lang.percent}%
+                                        {lang?.percent}%
                                     </Text>
                                 </HStack>
                                 <Progress
-                                    value={lang.percent}
+                                    value={lang?.percent}
                                     size="xs"
                                     colorScheme={i % 2 === 0 ? "blue" : "purple"}
                                     borderRadius="sm"
