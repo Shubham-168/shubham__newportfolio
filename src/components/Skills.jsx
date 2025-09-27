@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import {
   Box,
   Flex,
@@ -32,11 +32,13 @@ export default function Skills() {
         <VStack align="start" spacing={5} w="100%">
           <Heading className="gradient-text" size="lg" mb={4}>
             My Programming Skills
-          </Heading>  
+          </Heading>
 
-          {resumeData.skills.map((skill, i) => (
-            <SkillBar key={i} skill={skill} />
-          ))}
+          <div style={{ width:'100%', display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '30px', rowGap:'15px' }}>
+            {resumeData.skills.map((skill, i) => (
+              <SkillBar key={i} skill={skill} />
+            ))}
+          </div>
         </VStack>
       </Flex>
     </Box>
@@ -51,7 +53,7 @@ function SkillBar({ skill }) {
   useEffect(() => {
     if (hovered) {
       let current = 0
-      const step = skill.level / 30 // controls speed
+      const step = skill.level / 20 // controls speed
       const interval = setInterval(() => {
         current += step
         if (current >= skill.level) {
@@ -74,6 +76,7 @@ function SkillBar({ skill }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       cursor="pointer"
+    // sx={{border:'1px solid red'}}
     >
       <Flex justify="space-between" mb={1}>
         <Text>{skill.name}</Text>

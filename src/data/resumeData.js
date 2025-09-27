@@ -9,6 +9,7 @@ import {
   FaCss3Alt,
   FaBootstrap,
   FaGitAlt,
+  FaTools,
 } from "react-icons/fa"
 import {
   SiTailwindcss,
@@ -34,10 +35,11 @@ const resumeData = {
   role: "Full-Stack Web Developer",
   subtitle: "I design and build modern, scalable, and user-friendly applications.",
   stats: [
-    { label: "Projects", value: "4+ Major Projects", icon: FaCode },
-    { label: "Clients", value: "Open Source & Training Projects", icon: MdWork },
-    { label: "Experience", value: "1+ Years of Hands-on Learning", icon: FaLaptopCode },
-  ],
+  { label: "Projects", value: "4+ Full-Stack Applications Delivered", icon: FaCode },
+  { label: "Clients", value: "Open Source & Training Work", icon: MdWork },
+  { label: "Experience", value: "1+ Years of Practical Development", icon: FaLaptopCode },
+  { label: "Technologies", value: "10+ Modern Tools & Frameworks", icon: FaTools },
+],
   services: [
     {
       title: "Frontend Development",
@@ -68,7 +70,7 @@ const resumeData = {
     { name: "Python", icon: FaPython, level: 90 },
     { name: "Node.js", icon: FaNodeJs, level: 94 },
     { name: "Express.js", icon: FaNodeJs, level: 96 },
-    { name: "SQLite", icon: SiSqlite, level: 95 },
+    { name: "MySQL", icon: SiSqlite, level: 95 },
     { name: "MongoDB", icon: SiMongodb, level: 90 },
     { name: "API Testing", icon: FaCode, level: 99 },
     { name: "Git", icon: FaGitAlt, level: 99 },
@@ -102,6 +104,7 @@ const resumeData = {
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
         { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -121,6 +124,7 @@ const resumeData = {
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
         { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
@@ -140,7 +144,9 @@ const resumeData = {
         "https://img.freepik.com/premium-vector/3d-illustration-e-commerce-online-shopping-search-product-mobile-application_210682-118.jpg",
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
         { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       ],

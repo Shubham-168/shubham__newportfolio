@@ -19,7 +19,7 @@ export default function App() {
     <Box minH="100vh" bg="gray.50" color="gray.800">
       <Navbar />
       <Hero />
-      <StatsBar />
+      {/* <StatsBar /> */}
       <Services />
       <Skills />
       <WhyHireMe />

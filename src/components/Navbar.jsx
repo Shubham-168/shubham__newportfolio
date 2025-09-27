@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import emailjs from "@emailjs/browser"
 import { Flex, Box, HStack, Link, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, FormControl, FormLabel, Input, Textarea, useDisclosure, useToast, Spinner, useTheme } from '@chakra-ui/react'
 import { transparentize } from "@chakra-ui/theme-tools";
+import { FaDownload } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -59,6 +61,7 @@ export default function Navbar() {
       px={{ base: 6, md: 12 }}
       py={4}
       w="100%"
+      h='9%'
       pos="fixed"
       top="0"
       left="0"
@@ -76,7 +79,7 @@ export default function Navbar() {
       <HStack spacing={3} align="center">
         <Box bg="white" w={10} h={10} borderRadius="full"
           display="flex" alignItems="center" justifyContent="center" boxShadow="sm">
-          
+
           <Link href="#home"><Text fontWeight={700} className="text-[#27F5F2]">S</Text></Link>
         </Box>
         <Text fontWeight={700} className="text-[#27F5F2]">Shubham</Text>
@@ -92,6 +95,7 @@ export default function Navbar() {
 
       {/* Buttons */}
       <HStack spacing={3}>
+        {/* Resume Download */}
         <Button
           as="a"
           href="/Shubham_Saini_NewResume.pdf"
@@ -104,15 +108,17 @@ export default function Navbar() {
           color="blue.600"
           _hover={{ bg: "yellow.300", color: "black" }}
         >
-          Download Resume
+          <FaDownload size={16} />
         </Button>
+
+        {/* Contact Me */}
         <Button
           colorScheme="pink"
           size="sm"
           borderRadius="full"
           onClick={onOpen}
         >
-          Contact Me
+          <MdEmail size={18} />
         </Button>
       </HStack>
 

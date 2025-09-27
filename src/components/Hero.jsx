@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import resumeData from "../data/resumeData";
 // import heroImg from "../assets/shubham_profile.jpg";
 import heroImg from "../assets/profile.png";
+import StatsBars from './StatsBar';
 
 export default function Hero() {
   const nameColors = [
@@ -42,7 +43,7 @@ export default function Hero() {
     <Box
       id="home"
       className="hero-bg"
-      py={{ base: 10, md: 20 }}
+      py={{ base: 5, md: 10 }}
       px={{ base: 6, md: 24 }}
     >
       <Flex
@@ -52,8 +53,9 @@ export default function Hero() {
         gap={8}
       >
         {/* Left Column */}
-        <Box flex="1" maxW={{ md: "50%" }}>
-          <Text color="gray.500" fontSize={{ base: "md", md: "lg" }} mb={4}>
+        <Box flex="1" maxW={{ md: "50%" }} mt={{ base: 4, md: 10 }}>
+          {/* Intro */}
+          <Text color="gray.500" fontSize={{ base: "md", md: "lg" }} mb={2}>
             Hello there, my name is
           </Text>
 
@@ -67,12 +69,12 @@ export default function Hero() {
           >
             <Typewriter
               words={[`${resumeData.name} ${resumeData.surname}`, "Full Stack Developer...!"]}
-              loop={0} // infinite
+              loop={0}
               cursor
               cursorStyle="|"
               typeSpeed={100}
               deleteSpeed={50}
-              delaySpeed={4000} // retype every 5s
+              delaySpeed={4000}
             />
           </Heading>
 
@@ -86,7 +88,7 @@ export default function Hero() {
           >
             <Typewriter
               words={quoteData.map((q) => q.text)}
-              loop={0} // infinite
+              loop={0}
               cursor
               cursorStyle="|"
               typeSpeed={70}
@@ -95,20 +97,28 @@ export default function Hero() {
             />
           </Text>
 
-          {/* <Text color="gray.600" maxW="xl" mb={8}>
-            {resumeData.subtitle}
-          </Text> */}
+          {/* Stats Section */}
+          <StatsBars />
 
-          <Button
-            size="lg"
-            px={8}
-            borderRadius="2xl"
-            bgGradient="linear(to-r, #ff8aa9, #9b8cff)"
-            color="white"
-          >
-            Hire Me
-          </Button>
+          {/* Hire Me Button */}
+          <Flex justify={{ base: "center", md: "center" }} mt={8}>
+            <Button
+              size="lg"
+              px={8}
+              borderRadius="2xl"
+              bgGradient="linear(to-r, #ff8aa9, #9b8cff)"
+              color="white"
+              _hover={{ opacity: 0.9 }} // subtle hover only
+              onClick={() => {
+                const section = document.getElementById("contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Hire Me
+            </Button>
+          </Flex>
         </Box>
+
 
         {/* Right Column */}
         <Box
@@ -121,10 +131,13 @@ export default function Hero() {
             as="img"
             src={heroImg}
             alt="hero"
-            maxW="560px"
+            maxW={{ base: "260px", sm: "300px", md: "390px", lg: "400px" }}
             ml="auto"
             className="illustration-card"
+            objectFit="contain"
+            borderRadius="xl"
           />
+
         </Box>
       </Flex>
     </Box>

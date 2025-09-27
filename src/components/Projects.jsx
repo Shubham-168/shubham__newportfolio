@@ -14,7 +14,10 @@ import {
 } from "@chakra-ui/react"
 import { ExternalLinkIcon, ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 import resumeData from "../data/resumeData"
+import { motion } from "framer-motion"
 import { color } from "framer-motion"
+
+const MotionBox = motion(Box);
 
 // === Arrows ===
 function NextArrow(props) {
@@ -107,16 +110,26 @@ export default function Projects() {
 
                 {/* Tech icons */}
                 {project.tech?.length > 0 && (
-                  <HStack spacing={3} flexWrap="wrap">
+                  <HStack spacing={1} flexWrap="wrap">
                     {project.tech.map((tech, i) => (
-                      <Image
+                      <MotionBox
                         key={i}
-                        src={tech.logo}
-                        alt={tech.name}
-                        boxSize="30px"
-                        objectFit="contain"
-                        title={tech.name}
-                      />
+                        whileHover={{ rotateX: 360, transition: { duration: 0.8 } }}
+                        w="70px"
+                        h="70px"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Image
+                          key={i}
+                          src={tech.logo}
+                          alt={tech.name}
+                          boxSize="30px"
+                          objectFit="contain"
+                          title={tech.name}
+                        />
+                      </MotionBox>
                     ))}
                   </HStack>
                 )}
