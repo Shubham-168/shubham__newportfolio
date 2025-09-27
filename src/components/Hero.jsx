@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, Text, Heading, Button } from "@chakra-ui/react";
 import { Typewriter } from "react-simple-typewriter";
 import resumeData from "../data/resumeData";
-import heroImg from "../assets/shubham_profile.jpg";
+// import heroImg from "../assets/shubham_profile.jpg";
+import heroImg from "../assets/profile.png";
 
 export default function Hero() {
   const nameColors = [
