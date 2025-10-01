@@ -53,6 +53,40 @@ export default function Navbar() {
     }
   }
 
+  const handleDownload = async () => {
+    try {
+      const response = await fetch("/Shubham_Saini_NewResume.pdf");
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Shubham_Saini_NewResume.pdf";
+      link.click();
+      window.URL.revokeObjectURL(url);
+
+      toast({
+        title: "Download Successful!",
+        description: "Your resume has been downloaded 🚀",
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
+    } catch (error) {
+      console.error("Download error:", error);
+      toast({
+        title: "Download Failed",
+        description: "Something went wrong. Please try again.",
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+      });
+    }
+  };
+
+
   return (
     <Flex
       as="nav"
@@ -97,9 +131,7 @@ export default function Navbar() {
       <HStack spacing={3}>
         {/* Resume Download */}
         <Button
-          as="a"
-          href="/Shubham_Saini_NewResume.pdf"
-          download="Shubham_Saini_NewResume.pdf"
+          onClick={handleDownload}
           colorScheme="blue"
           variant="solid"
           size="sm"
@@ -110,6 +142,7 @@ export default function Navbar() {
         >
           <FaDownload size={16} />
         </Button>
+
 
         {/* Contact Me */}
         <Button
