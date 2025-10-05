@@ -132,7 +132,7 @@ export default function Contact() {
                 <FaGithub />
               </a>
               <a
-                href="https://linkedin.com/in/shubham-saini-6ab01a264"
+                href="https://www.linkedin.com/in/shubham8014"
                 target="_blank"
                 className="hover:text-blue-500"
               >
@@ -222,7 +222,7 @@ export default function Contact() {
             </p>
             <div className="flex gap-3 mt-3 text-[#27f5f2] text-xl">
               <a href="https://github.com/Shubham-168" target="_blank"><FaGithub /></a>
-              <a href="https://linkedin.com/in/shubham-saini-6ab01a264" target="_blank"><FaLinkedin /></a>
+              <a href="https://www.linkedin.com/in/shubham8014" target="_blank"><FaLinkedin /></a>
               <a href="mailto:saini68shubham@gmail.com" target="_blank"><FaEnvelope /></a>
             </div>
           </div>

@@ -193,9 +193,9 @@ const resumeData = {
     },
   ],
   contact: [
-    { type: "Email", value: "8014.shubham@gmail.com", icon: MdEmail },
+    { type: "Email", value: "saini68shubham@gmail.com", icon: MdEmail },
     { type: "Phone", value: "9368208014", icon: MdPhone },
-    { type: "LinkedIn", value: "https://www.linkedin.com/in/shubham-saini-6ab01a264/", icon: BsLinkedin },
+    { type: "LinkedIn", value: "https://www.linkedin.com/in/shubham8014/", icon: BsLinkedin },
     { type: "GitHub", value: "https://github.com/Shubham-168", icon: BsGithub },
     { type: "Location", value: "Amroha, Uttar Pradesh, 244221", icon: MdLocationOn },
   ],
