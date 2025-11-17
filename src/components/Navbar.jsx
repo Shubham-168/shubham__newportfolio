@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import emailjs from "@emailjs/browser"
 import { Flex, Box, HStack, Link, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, FormControl, FormLabel, Input, Textarea, useDisclosure, useToast, Spinner, useTheme } from '@chakra-ui/react'
 import { transparentize } from "@chakra-ui/theme-tools";
+import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -15,6 +16,7 @@ export default function Navbar() {
     message: 'Hi Shubham,\n\nI came across your portfolio and was really impressed. I\'d love to connect!\n\nBest regards,\n[Your Name]'
   })
   const [loading, setLoading] = useState(false)
+  const [showDownloadInNavbar, setShowDownloadInNavbar] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -86,6 +88,23 @@ export default function Navbar() {
     }
   };
 
+  // Scroll detection to show download button in navbar when hero section is out of view
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById("home");
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        // Check if hero section has scrolled out of view (bottom of hero is above viewport)
+        setShowDownloadInNavbar(rect.bottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
     <Flex
@@ -129,20 +148,38 @@ export default function Navbar() {
 
       {/* Buttons */}
       <HStack spacing={3}>
-        {/* Resume Download */}
-        <Button
-          onClick={handleDownload}
-          colorScheme="blue"
-          variant="solid"
-          size="sm"
-          borderRadius="full"
-          bg="white"
-          color="blue.600"
-          _hover={{ bg: "yellow.300", color: "black" }}
-        >
-          <FaDownload size={16} />
-        </Button>
-
+        {/* Resume Download - Only show when hero section is out of view */}
+        {showDownloadInNavbar && (
+          <Button
+            as={motion.button}
+            onClick={handleDownload}
+            colorScheme="blue"
+            variant="solid"
+            size="sm"
+            borderRadius="full"
+            bg="white"
+            color="blue.600"
+            _hover={{ bg: "yellow.300", color: "black" }}
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              y: {
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
+          >
+            <FaDownload size={16} />
+          </Button>
+        )}
 
         {/* Contact Me */}
         <Button
@@ -189,4 +226,4 @@ export default function Navbar() {
       </Modal>
     </Flex>
   )
-};
+}
