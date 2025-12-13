@@ -36,7 +36,7 @@ const services = [
 
 const MyServices = () => {
   return (
-    <Box id="myservices" py={16} textAlign="center" bg="white">
+    <Box id="myservices" bg="#e8f8f4" py={16} textAlign="center">
       <Heading mb={4} fontSize="2xl" color="pink.500">
         My Best UI Services
       </Heading>

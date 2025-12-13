@@ -13,7 +13,7 @@ import resumeData  from "../data/resumeData";
 
 export default function Services() {
   return (
-    <Box id="services" px={{ base: 6, md: 24 }} py={16}>
+    <Box id="services" display={{base: 'none', lg:'block'}} bg="#e8f8f4" px={{ base: 6, md: 24 }} py={16}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={12} alignItems="center">
         {/* Left side text */}
         <Box>

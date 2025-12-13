@@ -20,14 +20,16 @@ export default function App() {
       <Navbar />
       <Hero />
       {/* <StatsBar /> */}
-      <Services />
+      <Box bg={"#e8f8f4"}>
       <Skills />
-      <WhyHireMe />
       <Projects />
       <TechStack />
+      <Services />
+      <WhyHireMe />
       <MyServices />
       <GitStats />
       <Contact />
+      </Box>
     </Box>
   )
 }

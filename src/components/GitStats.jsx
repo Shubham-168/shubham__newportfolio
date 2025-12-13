@@ -100,7 +100,7 @@ export default function GitStats() {
     if (loading) return <Text>Loading GitHub Stats...</Text>;
 
     return (
-        <Box py={12} px={6} maxW="6xl" mx="auto">
+        <Box py={2} px={{base: 2, md: 16}} maxW="100%"  >
             <Heading fontSize="3xl" className="gradient-text" textAlign="center" mb={8}>
                 GitHub Stats
             </Heading>

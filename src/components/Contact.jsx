@@ -80,7 +80,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="mt-20 px-6 md:px-16"
+      className=" px-6 md:px-16 bg-[#e8f8f4]"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -93,7 +93,7 @@ export default function Contact() {
           {/* Location */}
           <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
             <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-[#27F5F2] text-white text-xl">
-              <FaMapMarkerAlt />
+              <FaMapMarkerAlt className="text-[#0b7078]" />
             </div>
             <h3 className="font-bold text-gray-800 mb-1">LOCATION</h3>
             <p className="text-gray-500 text-sm">Amroha, UP, India</p>
@@ -102,7 +102,7 @@ export default function Contact() {
           {/* Phone */}
           <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
             <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-[#27F5F2] text-white text-xl">
-              <FaPhoneAlt />
+              <FaPhoneAlt className="text-[#0b7078]"  />
             </div>
             <h3 className="font-bold text-gray-800 mb-1">PHONE</h3>
             <p className="text-gray-500 text-sm">+91 9368208014</p>
@@ -111,7 +111,7 @@ export default function Contact() {
           {/* Personal Email */}
           <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
             <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-[#27F5F2] text-white text-xl">
-              <FaEnvelope />
+              <FaEnvelope className="text-[#0b7078]"  />
             </div>
             <h3 className="font-bold text-gray-800 mb-1">PERSONAL EMAIL</h3>
             <p className="text-gray-500 text-sm">saini68shubham@gmail.com</p>
@@ -120,7 +120,7 @@ export default function Contact() {
           {/* Business Social */}
           <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
             <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-[#27F5F2] text-white text-xl">
-              <FaInstagram />
+              <FaInstagram className="text-[#0b7078]"  />
             </div>
             <h3 className="font-bold text-gray-800 mb-1">BUSINESS SOCIAL</h3>
             <div className="flex justify-center gap-4 text-[#27F5F2] text-xl mt-2">
@@ -129,17 +129,17 @@ export default function Contact() {
                 target="_blank"
                 className="hover:text-blue-500"
               >
-                <FaGithub />
+                <FaGithub className="text-[#0b7078]" />
               </a>
               <a
                 href="https://www.linkedin.com/in/shubham8014"
                 target="_blank"
                 className="hover:text-blue-500"
               >
-                <FaLinkedin />
+                <FaLinkedin className="text-[#0b7078]" />
               </a>
               <a href="https://twitter.com" target="_blank" className="hover:text-blue-500">
-                <FaTwitter />
+                <FaTwitter className="text-[#0b7078]" />
               </a>
             </div>
           </div>
@@ -157,10 +157,12 @@ export default function Contact() {
                 {/* <FormLabel>Your Name</FormLabel> */}
                 <Input
                   name="name"
-                  placeholder="Enter your name"
+                  placeholder="Please Enter your Name"
                   value={formData.name}
                   onChange={handleChange}
+                  borderWidth={2}
                   focusBorderColor="cyan.400"
+                  borderColor='#0b7078'
                   shadow="lg"
                 />
               </FormControl>
@@ -170,10 +172,12 @@ export default function Contact() {
                 <Input
                   type="email"
                   name="email"
-                  placeholder="Enter your email"
+                  placeholder="Please Enter your Email"
                   value={formData.email}
                   onChange={handleChange}
+                  borderWidth={2}
                   focusBorderColor="cyan.400"
+                  borderColor='#0b7078'
                   shadow="lg"
                 />
               </FormControl>
@@ -182,12 +186,13 @@ export default function Contact() {
                 {/* <FormLabel>Your Message</FormLabel> */}
                 <Textarea
                   name="message"
-                  placeholder="Enter your message"
+                  placeholder="Please Enter your Message"
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
+                  borderWidth={2}
                   focusBorderColor="cyan.400"
-                  border={20}
+                  borderColor='#0b7078'
                   shadow="lg"
                 />
               </FormControl>
@@ -210,32 +215,32 @@ export default function Contact() {
 
 
       {/* --- Footer --- */}
-      <footer className="mt-20 shadow-2xl border-t pt-10 pb-6 bg-white">
+      <footer className="mt-2  shadow-2xl border-t pt-10 pb-6 bg-white">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-evenly max-w-6xl mx-auto px-6 gap-8">
           {/* Logo + Tagline */}
           <div>
             <h2 className="text-3xl pb-5 font-extrabold ">
-              <span className="text-white rounded-full text-center font-bold text-4xl bg-[#27F5F2] pl-6 pr-6 pt-2 pb-2">S</span> <span className="text-4xl font-bold" > hubham </span>
+              <span className="text-[#0b7078] rounded-full text-center font-bold text-4xl bg-[#27F5F2] pl-6 pr-6 pt-2 pb-2">S</span> <span className="text-4xl text-[#0b7078] font-bold" > hubham </span>
             </h2>
             <p className="text-sm text-gray-500 mt-1">
               Crafting Digital Experiences, One Line of Code at a Time
             </p>
-            <div className="flex gap-3 mt-3 text-[#27f5f2] text-xl">
-              <a href="https://github.com/Shubham-168" target="_blank"><FaGithub /></a>
-              <a href="https://www.linkedin.com/in/shubham8014" target="_blank"><FaLinkedin /></a>
-              <a href="mailto:saini68shubham@gmail.com" target="_blank"><FaEnvelope /></a>
-            </div>
+            {/* <div className="flex gap-3 mt-3 text-[#27f5f2] text-xl">
+              <a href="https://github.com/Shubham-168" target="_blank"><FaGithub className="text-[#0b7078]" /></a>
+              <a href="https://www.linkedin.com/in/shubham8014" target="_blank"><FaLinkedin className="text-[#0b7078]" /></a>
+              <a href="mailto:saini68shubham@gmail.com" target="_blank"><FaEnvelope className="text-[#0b7078]" /></a>
+            </div> */}
           </div>
 
           {/* Links */}
           <div>
             <h3 className="font-extrabold text-3xl text-black mb-4">Links</h3>
             <ul className="space-y-1 text-sm text-gray-600">
-              <li className="hover:text-[#27F5F2] pt-3"><a href="#home" >Home</a></li>
-              <li className="hover:text-[#27F5F2]"><a href="#services" >Services</a></li>
-              <li className="hover:text-[#27F5F2]"><a href="#projects" >Projects</a></li>
-              <li className="hover:text-[#27F5F2]"><a href="#myservices" >Best Services</a></li>
-              <li className="hover:text-[#27F5F2]"><a href="#contact" >Contact Me</a></li>
+              <li className="hover:text-[#0b7078] pt-3"><a href="#home" >Home</a></li>
+              <li className="hover:text-[#0b7078]"><a href="#services" >Services</a></li>
+              <li className="hover:text-[#0b7078]"><a href="#projects" >Projects</a></li>
+              <li className="hover:text-[#0b7078]"><a href="#myservices" >Best Services</a></li>
+              <li className="hover:text-[#0b7078]"><a href="#contact" >Contact Me</a></li>
             </ul>
           </div>
 

@@ -46,7 +46,7 @@ const reasons = [
 
 export default function WhyHireMe() {
   return (
-    <Box as="section" py={20} bg={useColorModeValue("gray.50", "gray.900")}>
+    <Box as="section" py={20} bg="#e8f8f4">
       <Container maxW="7xl">
         {/* Heading */}
         <VStack spacing={4} textAlign="center" mb={16}>

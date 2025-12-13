@@ -1,33 +1,14 @@
-import {
-  FaCode,
-  FaLaptopCode,
-  FaDatabase,
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaHtml5,
-  FaCss3Alt,
-  FaBootstrap,
-  FaGitAlt,
-  FaTools,
-} from "react-icons/fa"
-import {
-  SiTailwindcss,
-  SiMui,
-  SiRedux,
-  SiJavascript,
-  SiTypescript,
-  SiMongodb,
-  SiSqlite,
-} from "react-icons/si"
+import { FaCode, FaLaptopCode, FaDatabase, FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaTools, FaEnvelopeOpenText, } from "react-icons/fa"
+import { SiTailwindcss, SiMui, SiRedux, SiJavascript, SiTypescript, SiMongodb, SiSqlite, SiNextdotjs } from "react-icons/si"
 import { MdWork, MdSchool, MdEmail, MdPhone, MdLocationOn } from "react-icons/md"
 import { BsLinkedin, BsGithub } from "react-icons/bs"
+import { GiBearHead } from "react-icons/gi";
+import justflipPlotsBanner from '../assets/justflipPlotsBanner.jpg';
+import justflipBanner from '../assets/justflipBanner.jpg';
+import CRMBanner from '../assets/CRMBanner.jpg';
+import bear from "../assets/zustand.png"; 
 
-// Banner images (import your created banners here)
-import InstaBanner from "../assets/insta_banner.png"
-import JobbyBanner from "../assets/jobby_banner.png"
-import NxtWatchBanner from "../assets/nxtwatch_banner.png"
-import Hero from "../assets/hero.png"
+// import Hero from "../assets/hero.png"
 
 const resumeData = {
   name: "Shubham",
@@ -35,11 +16,11 @@ const resumeData = {
   role: "Full-Stack Web Developer",
   subtitle: "I design and build modern, scalable, and user-friendly applications.",
   stats: [
-  { label: "Projects", value: "4+ Full-Stack Applications Delivered", icon: FaCode },
-  { label: "Clients", value: "Open Source & Training Work", icon: MdWork },
-  { label: "Experience", value: "1+ Years of Practical Development", icon: FaLaptopCode },
-  { label: "Technologies", value: "10+ Modern Tools & Frameworks", icon: FaTools },
-],
+    { label: "Projects", value: "4+ Full-Stack Applications Delivered", icon: FaCode },
+    { label: "Clients", value: "Open Source & Training Work", icon: MdWork },
+    { label: "Experience", value: "1+ Years of Practical Development", icon: FaLaptopCode },
+    { label: "Technologies", value: "10+ Modern Tools & Frameworks", icon: FaTools },
+  ],
   services: [
     {
       title: "Frontend Development",
@@ -58,19 +39,21 @@ const resumeData = {
     },
   ],
   skills: [
-    { name: "HTML", icon: FaHtml5, level: 99 },
-    { name: "CSS", icon: FaCss3Alt, level: 95 },
-    { name: "Bootstrap", icon: FaBootstrap, level: 95 },
+    { name: "React.js", icon: FaReact, level: 99 },
+    { name: "Next.js", icon: SiNextdotjs, level: 90 },
+    { name: "Zustand", icon: GiBearHead, level: 95 },
     { name: "JavaScript", icon: SiJavascript, level: 99 },
     { name: "TypeScript", icon: SiTypescript, level: 75 },
-    { name: "React.js", icon: FaReact, level: 99 },
-    { name: "Redux", icon: SiRedux, level: 96 },
     { name: "Tailwind CSS", icon: SiTailwindcss, level: 98 },
     { name: "Material UI", icon: SiMui, level: 90 },
     { name: "Python", icon: FaPython, level: 90 },
+    { name: "HTML", icon: FaHtml5, level: 99 },
+    { name: "CSS", icon: FaCss3Alt, level: 95 },
     { name: "Node.js", icon: FaNodeJs, level: 94 },
     { name: "Express.js", icon: FaNodeJs, level: 96 },
+    { name: "Bootstrap", icon: FaBootstrap, level: 95 },
     { name: "MySQL", icon: SiSqlite, level: 95 },
+    { name: "Redux", icon: SiRedux, level: 96 },
     { name: "MongoDB", icon: SiMongodb, level: 90 },
     { name: "API Testing", icon: FaCode, level: 99 },
     { name: "Git", icon: FaGitAlt, level: 99 },
@@ -139,22 +122,64 @@ const resumeData = {
       live: "https://shubhamwatchnxt.ccbp.tech",
     },
     {
-      title: "Product Searching App",
-      banner:
-        "https://img.freepik.com/premium-vector/3d-illustration-e-commerce-online-shopping-search-product-mobile-application_210682-118.jpg",
+      title: "Justflip Plots – Real Estate",
+      banner: justflipPlotsBanner,
+      tech: [
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+        { name: "Vercel", logo: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" },
+        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
+      ],
+      desc: `A modern real-estate platform built with Next.js for discovering premium plotted developments across Bengaluru. 
+            Features include advanced filtering (location, price, amenities), mobile-responsive carousels, developer listings, reviews, 
+            and an optimized UI powered by Tailwind CSS. Integrated with Next.js Image Optimization and deployed on Vercel for fast, 
+            SEO-friendly performance and seamless production delivery.`,
+      live: "https://justflip-plots-ten.vercel.app/"
+    },
+
+    {
+      title: "Justflip Portal – Real Estate",
+      banner: justflipBanner,
+      tech: [
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "Vercel", logo: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" }
+      ],
+      desc: `Full-featured real-estate marketplace for property discovery, built with Next.js and Node.js. The portal supports listing creation, search with faceted filters, server-side rendering for SEO, dynamic property pages, and optimized image loading. Integrated user authentication, contact forms, and analytics for conversion tracking.`,
+      live: "https://justflip.in/"
+    },
+    // {
+    //   title: "Justflip Dashboard – Agent & Admin Console",
+    //   banner: justflipDashboardBanner,
+    //   tech: [
+    //     { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    //     { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+    //     { name: "Chart.js", logo: "https://www.vectorlogo.zone/logos/chartjs/chartjs-icon.svg" },
+    //     { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+    //     { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    //     { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }
+    //   ],
+    //   desc: `A powerful admin and agent dashboard providing real-time analytics, lead management, property approval workflows, and reporting. Features include role-based access, charts & KPIs for sales and traffic, bulk import/export, and integrations with messaging and email services for notifications.`,
+    //   live: "https://justflip-dashboard.example.com"
+    // },
+    {
+      title: "Justflip CRM – Leads & Sales ",
+      banner: CRMBanner,
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "Zustand", logo: bear },
+        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       ],
-      desc: `A high-performance e-commerce platform built with React and Redux Toolkit, featuring micro-frontend architecture for scalability. 
-    Includes product listing, detailed product pages, state management for cart functionality, and a modern Tailwind-powered UI. 
-    Deployed on Vercel for seamless CI/CD and optimized hosting.`,
-      live: "https://host-product-app.vercel.app",
-    },
+      desc: `Customer Relationship Management system tailored for real-estate teams. Manages leads, automated follow-ups, pipeline stages, reminders, and agent assignments. Includes email & SMS integrations, lead scoring, note history, and a lightweight rules engine for automations. Demo Credentials - Username: developer@markanthony.co.in  Password: 1234.`,
+      live: "https://crm-testing-markanthony.vercel.app/login"
+    }
   ],
   experience: [
     {
@@ -202,45 +227,3 @@ const resumeData = {
 }
 
 export default resumeData
-
-
-
-
-// export const projects = [
-//   {
-//     title: "Instagram Clone – Social Media Web Application",
-//     tech: "React.js, JSX, CSS, Tailwind CSS, Material UI (MUI) Fetch API, js-cookie, react-icons, Git/GitHub",
-//     desc: "Developed a fully functional, responsive social media web application inspired by Instagram, featuring User Profile viewing, post feeds, search functionality, likes, and comments. This module specifically handles dynamic profile rendering based on URL parameters, API-driven data fetching, and optimized rendering performance. The app emphasizes accessibility, performance, and clean code architecture. \n\nUse this credentials for demo:- \nusername: rahul \npassword: rahul@2021.",
-//     live: "https://shubhaminsta.ccbp.tech",
-//   },
-//   {
-//     title: "Jobby App – Find Your Next Job Fast",
-//     tech: "React.js, Tailwind CSS, React Router, Fetch API, js-cookie, react-icons, Git/GitHub",
-//     desc: "The Jobby App is a fully responsive job search platform that allows users to explore, search, and filter job listings in real-time. It integrates user authentication, dynamic filtering, and API-driven data fetching to deliver a smooth and interactive experience. \n\nUse this credentials for demo:- \nusername: rahul \npassword: rahul@2021.",
-//     live: "https://jobbyshubham.ccbp.tech",
-//   },
-//   {
-//     title: "Nxt Watch App – YouTube Clone with Dark Mode",
-//     tech: "React.js, Context API, React Router, js-cookie, REST API, Tailwind CSS, Git/GitHub",
-//     desc: "The Nxt Watch App is a fully responsive YouTube clone where users can browse, search, and watch videos. It includes features like dark/light mode toggle, authentication using JWT tokens, save/like/dislike videos, and protected routes. Seamlessly integrates with APIs for video data and user actions.\n\nUse this credentials for demo:- \nusername: rahul \npassword: rahul@2021.",
-//     live: "https://shubhamwatchnxt.ccbp.tech"
-//   },
-//   {
-//     title: "Nxt Trendz (E-commerce Clone)",
-//     tech: "React Router, JWT, REST APIs",
-//     desc: "A full-fledged e-commerce clone inspired by Amazon and Flipkart, featuring authentication with JWT, protected routes, product listing, detailed product pages, and a responsive UI. It demonstrates handling REST APIs, secure login, and state management for a seamless shopping experience.\n\nDemo Credentials:\nusername: rahul\npassword: rahul@2021.",
-//     live: "http://shubhamnxttrend.ccbp.tech",
-//   },
-//   {
-//     title: "Recipe App",
-//     tech: "React, Redux Toolkit, Tailwind CSS, MicroFrontend Arch",
-//     desc: "An advanced recipe management application built with a micro-frontend architecture. Users can browse, search, and view detailed recipes with dynamic rendering and global state handling via Redux Toolkit. Styled with Tailwind CSS, it offers a modern, scalable, and modular design approach for large applications.",
-//     live: "https://food-recipe-app-rouge-psi.vercel.app/ ",
-//   },
-//   {
-//     title: "E-commerce Vercel App",
-//     tech: "React, Redux Toolkit, Tailwind CSS",
-//     desc: "A high-performance e-commerce platform built with React and Redux Toolkit, featuring micro-frontend architecture for scalability. Includes product listing, detailed product pages, state management for cart functionality, and a modern Tailwind-powered UI. Deployed on Vercel for seamless CI/CD and optimized hosting.",
-//     live: "https://host-product-app.vercel.app/",
-//   },
-// ];

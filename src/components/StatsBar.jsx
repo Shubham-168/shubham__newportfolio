@@ -21,7 +21,7 @@ export default function StatsBar() {
             {stat.icon ? <stat.icon size={24} /> : ""}
           </Box>
           <Text fontWeight={600}>{stat.label}</Text>
-          <Text fontSize="sm" color="gray.600">
+          <Text fontSize="sm" color="white">
             {stat.value}
           </Text>
         </Flex>

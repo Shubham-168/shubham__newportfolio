@@ -54,14 +54,14 @@ export default function Portfolio() {
           <Experience />
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
           viewport={{ once: true }}
         >
           <Education />
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -71,6 +71,7 @@ export default function Portfolio() {
         >
           <Contact />
         </motion.div>
+
       </div>
 
       <Footer />
