@@ -16,7 +16,7 @@ export default function GitStats() {
     const [loading, setLoading] = useState(true);
 
     const username = "Shubham-168";
-    const gitHubToken  = import.meta.env.VITE_GITHUB_TOKEN
+    const gitHubToken  = import.meta.env.VITE_GITHUB_TOKENS
 
     // Fetch contributions (heatmap)
     const fetchContributions = async () => {
