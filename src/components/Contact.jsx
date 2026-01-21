@@ -100,21 +100,21 @@ export default function Contact() {
           </div>
 
           {/* Phone */}
-          <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
+          <div className="bg-white shadow-md flex flex-col justify-center rounded-lg p-6 text-center hover:shadow-lg transition">
             <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-[#27F5F2] text-white text-xl">
               <FaPhoneAlt className="text-[#0b7078]"  />
             </div>
             <h3 className="font-bold text-gray-800 mb-1">PHONE</h3>
+            <p className="text-gray-500 flex text-sm">
               {/* Call */}
               <a
                 href="tel:+919368208014"
                 className="hover:text-green-500"
               >
                 <FaPhoneAlt className="text-[#0b7078]" />
-                <p className="text-gray-500 text-sm"> 
-                   +91 9368208014
-                </p>
               </a>
+                   +91 9368208014
+            </p>
           </div>
 
           {/* Personal Email */}
