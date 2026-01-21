@@ -105,15 +105,15 @@ export default function Contact() {
               <FaPhoneAlt className="text-[#0b7078]"  />
             </div>
             <h3 className="font-bold text-gray-800 mb-1">PHONE</h3>
-            <p className="text-gray-500 flex text-sm">
+            <p className="text-gray-500 self-center hover:underline cursor-pointer text-sm">
               {/* Call */}
               <a
                 href="tel:+919368208014"
-                className="hover:text-green-500"
+                className="hover:text-green-500 flex items-center gap-2"
               >
                 <FaPhoneAlt className="text-[#0b7078]" />
-              </a>
                    +91 9368208014
+              </a>
             </p>
           </div>
 
