@@ -122,7 +122,7 @@ const resumeData = {
       live: "https://shubhamwatchnxt.ccbp.tech",
     },
     {
-      title: "Justflip Plots – Real Estate",
+      title: "Plots In Bangalore",
       banner: justflipPlotsBanner,
       tech: [
         { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
@@ -136,7 +136,7 @@ const resumeData = {
             Features include advanced filtering (location, price, amenities), mobile-responsive carousels, developer listings, reviews, 
             and an optimized UI powered by Tailwind CSS. Integrated with Next.js Image Optimization and deployed on Vercel for fast, 
             SEO-friendly performance and seamless production delivery.`,
-      live: "https://justflip-plots-ten.vercel.app/"
+      live: "https://www.plotsinbanglore.com/"
     },
 
     {
