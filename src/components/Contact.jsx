@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { FormControl, FormLabel, Input, Textarea, Button, VStack, Heading, useToast, useTheme } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
@@ -120,26 +120,50 @@ export default function Contact() {
           {/* Business Social */}
           <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
             <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-[#27F5F2] text-white text-xl">
-              <FaInstagram className="text-[#0b7078]"  />
+              <FaInstagram className="text-[#0b7078]" />
             </div>
+          
             <h3 className="font-bold text-gray-800 mb-1">BUSINESS SOCIAL</h3>
+          
             <div className="flex justify-center gap-4 text-[#27F5F2] text-xl mt-2">
+              {/* GitHub */}
               <a
                 href="https://github.com/Shubham-168"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-blue-500"
               >
                 <FaGithub className="text-[#0b7078]" />
               </a>
+          
+              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/shubham8014"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-blue-500"
               >
                 <FaLinkedin className="text-[#0b7078]" />
               </a>
-              <a href="https://twitter.com" target="_blank" className="hover:text-blue-500">
-                <FaTwitter className="text-[#0b7078]" />
+          
+              {/* WhatsApp */}
+              <a
+                href={`https://wa.me/919368208014?text=${encodeURIComponent(
+                  "Hi Shubham, I went through your portfolio and I’m really impressed by your skills and work. I’d love to connect with you!"
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-500"
+              >
+                <FaWhatsapp className="text-[#0b7078]" />
+              </a>
+          
+              {/* Call */}
+              <a
+                href="tel:+919368208014"
+                className="hover:text-green-500"
+              >
+                <FaPhoneAlt className="text-[#0b7078]" />
               </a>
             </div>
           </div>
