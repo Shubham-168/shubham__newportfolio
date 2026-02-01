@@ -166,14 +166,6 @@ export default function Contact() {
               >
                 <FaWhatsapp className="text-[#0b7078]" />
               </a>
-          
-              {/* Call */}
-              {/* <a
-                href="tel:+919368208014"
-                className="hover:text-green-500"
-              >
-                <FaPhoneAlt className="text-[#0b7078]" />
-              </a> */}
             </div>
           </div>
         </div>

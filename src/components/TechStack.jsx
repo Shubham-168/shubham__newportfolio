@@ -1,4 +1,3 @@
-// TechStackCarousel.jsx
 import React from "react";
 import Slider from "react-slick";
 import { Box, Heading, Image, useBreakpointValue } from "@chakra-ui/react";
@@ -16,6 +15,7 @@ const techIcons = [
   { name: "NEXT.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
   { name: "Redux", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
   { name: "Zustand", src: bear },
+  { name: "TanStack", src: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/reactquery.svg" },
   { name: "JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
   { name: "Tailwind CSS", src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
   { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
@@ -37,6 +37,7 @@ const techIconsTwo = [
   { name: "ChatGPT", src: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
   { name: "Cursor AI", src: "https://cursor.sh/favicon.ico" },
   { name: "Material UI", src: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg" },
+  { name: "ShadCN UI", src: "https://ui.shadcn.com/favicon.ico" },
   { name: "REST API", src: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png" },
 ];
 
@@ -47,15 +48,15 @@ export default function TechStackCarousel() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000,      
+    speed: 5000,
     slidesToShow,
     slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 0,      
+    autoplaySpeed: 0,
     cssEase: "linear",
     pauseOnHover: true,
-    rtl: true,             
-    arrows: false,     
+    rtl: true,
+    arrows: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: Math.max(3, Math.floor(slidesToShow * 0.75)) } },
       { breakpoint: 640, settings: { slidesToShow: Math.max(2, Math.floor(slidesToShow * 0.5)) } },
@@ -63,15 +64,15 @@ export default function TechStackCarousel() {
   };
 
   return (
-    <Box py={8}  px={{ base: 3, md: 6 }} bg="#e8f8f4">
+    <Box py={8} px={{ base: 3, md: 6 }} bg="#e8f8f4">
       <Heading mb={6} textAlign="center" fontSize={{ base: "lg", md: "2xl" }} color="gray.700">
-        Working With Latest <br/> Technologies & Stack
+        Working With Latest <br /> Technologies & Stack
       </Heading>
 
       <Box maxW="88%" mx="auto" position="relative">
         <Slider {...settings}>
           {techIcons.concat(techIconsTwo).map((tech, i) => {
-      
+
             return (
               <Box key={`${tech.name}-${i}`} px={3} display="flex" justifyContent="center" alignItems="center">
                 <MotionBox
@@ -86,7 +87,7 @@ export default function TechStackCarousel() {
                   <Image
                     src={tech.src}
                     alt={tech.name}
-                    boxSize="80px"    
+                    boxSize="80px"
                     objectFit="contain"
                     draggable={false}
                     fallbackSrc=""
@@ -115,7 +116,7 @@ export default function TechStackCarousel() {
                   <Image
                     src={tech.src}
                     alt={tech.name}
-                    boxSize="80px"    
+                    boxSize="80px"
                     objectFit="contain"
                     draggable={false}
                     fallbackSrc=""

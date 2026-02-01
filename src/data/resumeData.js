@@ -1,12 +1,14 @@
 import { FaCode, FaLaptopCode, FaDatabase, FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaTools, FaEnvelopeOpenText, } from "react-icons/fa"
-import { SiTailwindcss, SiMui, SiRedux, SiJavascript, SiTypescript, SiMongodb, SiSqlite, SiNextdotjs } from "react-icons/si"
+import { SiTailwindcss, SiMui, SiRedux, SiJavascript, SiTypescript, SiMongodb, SiSqlite, SiNextdotjs, SiShadcnui, SiSupabase, SiReactquery } from "react-icons/si"
 import { MdWork, MdSchool, MdEmail, MdPhone, MdLocationOn } from "react-icons/md"
 import { BsLinkedin, BsGithub } from "react-icons/bs"
 import { GiBearHead } from "react-icons/gi";
 import justflipPlotsBanner from '../assets/justflipPlotsBanner.jpg';
 import justflipBanner from '../assets/justflipBanner.jpg';
 import CRMBanner from '../assets/CRMBanner.jpg';
-import bear from "../assets/zustand.png"; 
+import bear from "../assets/zustand.png";
+import paymentBanner from "../assets/paymentBanner.png";
+import vesselBanner from "../assets/vesselBanner.png";
 
 // import Hero from "../assets/hero.png"
 
@@ -40,12 +42,14 @@ const resumeData = {
   ],
   skills: [
     { name: "React.js", icon: FaReact, level: 99 },
-    { name: "Next.js", icon: SiNextdotjs, level: 90 },
+    { name: "Next.js", icon: SiNextdotjs, level: 95 },
     { name: "Zustand", icon: GiBearHead, level: 95 },
     { name: "JavaScript", icon: SiJavascript, level: 99 },
-    { name: "TypeScript", icon: SiTypescript, level: 75 },
+    { name: "TypeScript", icon: SiTypescript, level: 90 },
     { name: "Tailwind CSS", icon: SiTailwindcss, level: 98 },
-    { name: "Material UI", icon: SiMui, level: 90 },
+    { name: "Material UI", icon: SiMui, level: 95 },
+    { name: "ShadCN UI", icon: SiShadcnui, level: 90 },
+    { name: "TanStack Query/React Query", icon: SiReactquery, level: 90 },
     { name: "Python", icon: FaPython, level: 90 },
     { name: "HTML", icon: FaHtml5, level: 99 },
     { name: "CSS", icon: FaCss3Alt, level: 95 },
@@ -73,11 +77,11 @@ const resumeData = {
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       ],
       desc: `Developed a fully functional, responsive social media web application inspired by Instagram, featuring User Profile viewing, post feeds, search functionality, likes, and comments. 
-    This module specifically handles dynamic profile rendering based on URL parameters, API-driven data fetching, and optimized rendering performance.
+            This module specifically handles dynamic profile rendering based on URL parameters, API-driven data fetching, and optimized rendering performance.
 
-    Use these credentials for Demo:
-    Username: rahul,
-    Password: rahul@2021.`,
+            Use these credentials for Demo:
+            Username: rahul,
+            Password: rahul@2021.`,
       live: "https://shubhaminsta.ccbp.tech",
     },
     {
@@ -93,11 +97,11 @@ const resumeData = {
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
       ],
       desc: `The Jobby App is a fully responsive job search platform that allows users to explore, search, and filter job listings in real-time. 
-    It integrates user authentication, dynamic filtering, and API-driven data fetching to deliver a smooth and interactive experience. 
+            It integrates user authentication, dynamic filtering, and API-driven data fetching to deliver a smooth and interactive experience. 
 
-    Use these credentials for Demo:
-    Username: rahul,
-    Password: rahul@2021.`,
+            Use these credentials for Demo:
+            Username: rahul,
+            Password: rahul@2021.`,
       live: "https://jobbyshubham.ccbp.tech",
     },
     {
@@ -113,12 +117,12 @@ const resumeData = {
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       ],
       desc: `The Nxt Watch App is a fully responsive YouTube clone where users can browse, search, and watch videos. 
-    It includes features like dark/light mode toggle, authentication using JWT tokens, save/like/dislike videos, and protected routes. 
-    Seamlessly integrates with APIs for video data and user actions.
+        It includes features like dark/light mode toggle, authentication using JWT tokens, save/like/dislike videos, and protected routes. 
+        Seamlessly integrates with APIs for video data and user actions.
 
-    Use these credentials for Demo:
-    Username: rahul,
-    Password: rahul@2021.`,
+        Use these credentials for Demo:
+        Username: rahul,
+        Password: rahul@2021.`,
       live: "https://shubhamwatchnxt.ccbp.tech",
     },
     {
@@ -138,7 +142,6 @@ const resumeData = {
             SEO-friendly performance and seamless production delivery.`,
       live: "https://www.plotsinbanglore.com/"
     },
-
     {
       title: "Justflip Portal – Real Estate",
       banner: justflipBanner,
@@ -179,7 +182,47 @@ const resumeData = {
       ],
       desc: `Customer Relationship Management system tailored for real-estate teams. Manages leads, automated follow-ups, pipeline stages, reminders, and agent assignments. Includes email & SMS integrations, lead scoring, note history, and a lightweight rules engine for automations. Demo Credentials - Username: developer@markanthony.co.in  Password: 1234.`,
       live: "https://crm-testing-markanthony.vercel.app/login"
+    },
+    {
+      title: "Vessel Hierarchy Management System",
+      banner: vesselBanner,
+      tech: [
+        // { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+        { name: "ShadCn UI", logo: "https://ui.shadcn.com/favicon.ico" },
+        { name: "React Flow", logo: "https://reactflow.dev/favicon.ico" },
+      ],
+      desc: `An interactive vessel hierarchy management system built with React and Next.js. 
+              Visualizes complex vessel structures using React Flow with dynamic node relationships 
+              and real-time updates. Features drag-and-drop hierarchy editing, role-based access, 
+              and scalable state management using Redux and TypeScript for high performance.`
+      ,
+      live: "https://vessel-hierarchy-tree.vercel.app"
+    },
+    {
+      title: "Payment Management System",
+      banner: paymentBanner,
+      tech: [
+        { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "ShadCn UI", logo: "https://ui.shadcn.com/favicon.ico" },
+        { name: "Zustand", logo: bear },
+        { name: "TanStack Query", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/reactquery.svg" },
+        { name: "Supabase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
+        // { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+      ],
+      desc: `A modern payment management platform for tracking transactions and billing workflows. 
+            Built with React and TypeScript, featuring lightweight state management using Zustand 
+            and a clean UI with ShadCn UI and Tailwind CSS. Integrated with Supabase for authentication, 
+            real-time data updates, and secure backend operations.`
+      ,
+      live: "https://payment-management-dashboard.vercel.app"
     }
+
+
   ],
   experience: [
     {
