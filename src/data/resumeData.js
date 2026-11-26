@@ -3,6 +3,9 @@ import { SiTailwindcss, SiMui, SiRedux, SiJavascript, SiTypescript, SiMongodb, S
 import { MdWork, MdSchool, MdEmail, MdPhone, MdLocationOn } from "react-icons/md"
 import { BsLinkedin, BsGithub } from "react-icons/bs"
 import { GiBearHead } from "react-icons/gi";
+import instaBanner from "../assets/insta_banner.png";
+import jobbyBanner from "../assets/jobby_banner.png";
+import nxtwatchBanner from "../assets/nxtwatch_banner.png";
 import justflipPlotsBanner from '../assets/justflipPlotsBanner.jpg';
 import justflipBanner from '../assets/justflipBanner.jpg';
 import CRMBanner from '../assets/CRMBanner.jpg';
@@ -66,8 +69,7 @@ const resumeData = {
   projects: [
     {
       title: "Insta Share (Instagram Clone)",
-      banner:
-        "https://berqwp-cdn.sfo3.cdn.digitaloceanspaces.com/cache/miracuves.com/wp-content/uploads/2025/06/Social-Media-Interaction-in-Style.webp?bwp",
+      banner: instaBanner,
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -86,8 +88,7 @@ const resumeData = {
     },
     {
       title: "Jobby App – Job Search Platform",
-      banner:
-        "https://ideausher.com/wp-content/uploads/2021/12/Idea-Usher-Mid-Image-App-Development-Phone-Mockup-How-To-Get-An-App-Idea-Developed-2.webp",
+      banner: jobbyBanner,
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
@@ -106,8 +107,7 @@ const resumeData = {
     },
     {
       title: "Nxt Watch (YouTube Clone)",
-      banner:
-        "https://s3-alpha.figma.com/hub/file/1803556575/dddad4ab-afbe-4c4b-bfbd-5f872db64b12-cover.png",
+      banner: nxtwatchBanner,
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
