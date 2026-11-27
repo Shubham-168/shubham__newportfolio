@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { RevealSection } from "./motion";
 
 type ContributionDay = {
   date: string;
@@ -106,7 +107,7 @@ export default function GithubStats() {
   }, []);
 
   return (
-    <section className="section-wrap border-t border-white/[0.06] py-16" aria-labelledby="github-heading">
+    <RevealSection className="section-wrap border-t border-white/[0.06] py-16" aria-labelledby="github-heading">
       <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
         <div>
           <span className="section-label">Open source</span>
@@ -168,6 +169,6 @@ export default function GithubStats() {
           </div>
         </div>
       </div>
-    </section>
+    </RevealSection>
   );
 }

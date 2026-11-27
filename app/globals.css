@@ -272,10 +272,10 @@ textarea:focus-visible {
   font-weight: 700;
 }
 
-.float-chip-one { top: 12%; left: -1%; transform: rotate(-7deg); }
-.float-chip-two { top: 17%; right: 0; transform: rotate(7deg); }
-.float-chip-three { bottom: 23%; left: -4%; transform: rotate(-5deg); }
-.float-chip-four { right: -3%; bottom: 29%; transform: rotate(6deg); }
+.float-chip-one { top: 12%; left: -1%; }
+.float-chip-two { top: 17%; right: 0; }
+.float-chip-three { bottom: 23%; left: -4%; }
+.float-chip-four { right: -3%; bottom: 29%; }
 
 .section-wrap {
   width: min(100% - 40px, 1200px);

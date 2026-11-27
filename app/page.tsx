@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import {
   FaArrowDown,
@@ -26,6 +27,7 @@ import {
 } from "react-icons/fa6";
 import resumeData from "../src/data/resumeData";
 import GithubStats from "./github-stats";
+import { RevealSection } from "./motion";
 
 type Asset = string | { src: string };
 
@@ -62,6 +64,8 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
   const [formStatus, setFormStatus] = useState("");
+  const prefersReducedMotion = useReducedMotion();
+  const reduceMotion = prefersReducedMotion ?? false;
 
   const scrollProjects = (direction: -1 | 1) => {
     projectRail.current?.scrollBy({
@@ -94,7 +98,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#080b18]/85 backdrop-blur-xl">
+      <motion.header
+        className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#080b18]/85 backdrop-blur-xl"
+        initial={reduceMotion ? false : { opacity: 0, y: -16 }}
+        animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
           <a className="flex items-center gap-3" href="#home" aria-label="Shubham Saini home">
             <span className="brand-mark">S</span>
@@ -137,13 +146,18 @@ export default function Home() {
             ))}
           </div>
         )}
-      </header>
+      </motion.header>
 
       <section id="home" className="hero-section scroll-mt-24">
         <div className="hero-orb hero-orb-one" />
         <div className="hero-orb hero-orb-two" />
         <div className="relative mx-auto grid min-h-[710px] max-w-7xl items-center gap-8 px-5 pb-12 pt-28 sm:px-8 lg:min-h-[690px] lg:grid-cols-[1.05fr_.95fr] lg:pb-16 lg:pt-24">
-          <div className="relative z-10 max-w-2xl">
+          <motion.div
+            className="relative z-10 max-w-2xl"
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.12, ease: "easeOut" }}
+          >
             <div className="eyebrow mb-6"><FaWandMagicSparkles /> Open to exciting opportunities</div>
             <p className="mb-3 text-sm font-medium text-slate-300">Hello, I’m</p>
             <h1 className="text-balance text-5xl font-bold leading-[1.04] tracking-[-0.055em] text-white sm:text-6xl lg:text-[76px]">
@@ -168,22 +182,47 @@ export default function Home() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hero-art relative mx-auto flex h-[380px] w-full max-w-[540px] items-center justify-center sm:h-[480px]">
+          <motion.div
+            className="hero-art relative mx-auto flex h-[380px] w-full max-w-[540px] items-center justify-center sm:h-[480px]"
+            initial={reduceMotion ? false : { opacity: 0, scale: 0.97, y: 12 }}
+            animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
+          >
             <div className="portrait-glow" />
             <div className="portrait-frame">
               <Image src="/images/portfolio-hero.webp" alt="Developer illustration with modern web technology icons" fill priority sizes="(min-width: 1024px) 45vw, 90vw" />
             </div>
-            <div className="float-chip float-chip-one"><span className="text-cyan-300">N</span> Next.js</div>
-            <div className="float-chip float-chip-two"><span className="text-sky-300">⚛</span> React</div>
-            <div className="float-chip float-chip-three"><span className="text-blue-300">TS</span> TypeScript</div>
-            <div className="float-chip float-chip-four"><span className="text-cyan-200">≋</span> Tailwind</div>
-          </div>
+            <motion.div
+              className="float-chip float-chip-one"
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: [0, -6, 0], rotate: -7 }}
+              transition={{ opacity: { delay: 0.55, duration: 0.35 }, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
+            ><span className="text-cyan-300">N</span> Next.js</motion.div>
+            <motion.div
+              className="float-chip float-chip-two"
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: [0, -7, 0], rotate: 7 }}
+              transition={{ opacity: { delay: 0.7, duration: 0.35 }, y: { duration: 4.5, repeat: Infinity, ease: "easeInOut" } }}
+            ><span className="text-sky-300">⚛</span> React</motion.div>
+            <motion.div
+              className="float-chip float-chip-three"
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: [0, -6, 0], rotate: -5 }}
+              transition={{ opacity: { delay: 0.85, duration: 0.35 }, y: { duration: 4.2, repeat: Infinity, ease: "easeInOut" } }}
+            ><span className="text-blue-300">TS</span> TypeScript</motion.div>
+            <motion.div
+              className="float-chip float-chip-four"
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={reduceMotion ? undefined : { opacity: 1, y: [0, -7, 0], rotate: 6 }}
+              transition={{ opacity: { delay: 1, duration: 0.35 }, y: { duration: 4.6, repeat: Infinity, ease: "easeInOut" } }}
+            ><span className="text-cyan-200">≋</span> Tailwind</motion.div>
+          </motion.div>
         </div>
       </section>
 
-      <section id="stats" className="section-wrap -mt-2 scroll-mt-28">
+      <RevealSection id="stats" className="section-wrap -mt-2 scroll-mt-28">
         <div className="stats-panel">
           {resumeData.stats.map((stat) => {
             const Icon = stat.icon;
@@ -199,9 +238,9 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </RevealSection>
 
-      <section aria-label="Technology stack" className="section-wrap pt-5">
+      <RevealSection aria-label="Technology stack" className="section-wrap pt-5">
         <div className="tech-strip">
           <p className="shrink-0 text-xs font-semibold text-slate-200 sm:text-sm">Tech Stack I Work With</p>
           <div className="hidden h-7 w-px bg-white/15 sm:block" />
@@ -212,9 +251,9 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
-      <section id="projects" className="section-wrap section-space scroll-mt-24">
+      <RevealSection id="projects" className="section-wrap section-space scroll-mt-24">
         <div className="section-heading-row">
           <div className="max-w-md">
             <span className="section-label"><FaCode /> Featured work</span>
@@ -259,9 +298,9 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </RevealSection>
 
-      <section id="experience" className="section-wrap section-space border-t border-white/[0.06] scroll-mt-24">
+      <RevealSection id="experience" className="section-wrap section-space border-t border-white/[0.06] scroll-mt-24">
         <div className="section-heading-row">
           <div className="max-w-sm">
             <span className="section-label"><FaBriefcase /> Experience</span>
@@ -281,9 +320,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
-      <section id="services" className="section-wrap section-space border-t border-white/[0.06] scroll-mt-24">
+      <RevealSection id="services" className="section-wrap section-space border-t border-white/[0.06] scroll-mt-24">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
           <div>
             <span className="section-label"><FaWandMagicSparkles /> Services</span>
@@ -304,9 +343,9 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </RevealSection>
 
-      <section id="about" className="section-wrap section-space grid items-center gap-10 border-t border-white/[0.06] scroll-mt-24 lg:grid-cols-[.72fr_1.2fr_1fr]">
+      <RevealSection id="about" className="section-wrap section-space grid items-center gap-10 border-t border-white/[0.06] scroll-mt-24 lg:grid-cols-[.72fr_1.2fr_1fr]">
         <div className="about-photo">
         <Image src="/images/shubham-profile.png" alt="Shubham Saini" width={460} height={460} sizes="(min-width: 1024px) 20vw, 60vw" />
         </div>
@@ -326,9 +365,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
-      <section className="section-wrap section-space border-t border-white/[0.06]" id="skills">
+      <RevealSection className="section-wrap section-space border-t border-white/[0.06]" id="skills">
         <div className="section-heading-row mb-8">
           <div>
             <span className="section-label"><FaCode /> Skills</span>
@@ -348,11 +387,11 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </RevealSection>
 
       <GithubStats />
 
-      <section id="contact" className="contact-banner section-wrap scroll-mt-24">
+      <RevealSection id="contact" className="contact-banner section-wrap scroll-mt-24">
         <div className="contact-glow" />
         <div className="relative grid gap-8 p-6 sm:p-9 lg:grid-cols-[1fr_.85fr] lg:items-center lg:p-12">
           <div>
@@ -382,13 +421,19 @@ export default function Home() {
             {formStatus && <p className="text-xs leading-5 text-slate-300" role="status">{formStatus}</p>}
           </form>
         </div>
-      </section>
+      </RevealSection>
 
-      <footer className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/[0.07] px-5 py-7 text-xs text-slate-500 sm:flex-row sm:px-8">
+      <motion.footer
+        className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/[0.07] px-5 py-7 text-xs text-slate-500 sm:flex-row sm:px-8"
+        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+        whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <a href="#home" className="font-semibold text-slate-300">© 2026 Shubham Saini</a>
         <p>Crafting digital experiences, one line of code at a time.</p>
         <a href="#home" className="flex items-center gap-2 hover:text-white">Back to top <FaArrowDown className="rotate-180" /></a>
-      </footer>
+      </motion.footer>
     </main>
   );
 }
