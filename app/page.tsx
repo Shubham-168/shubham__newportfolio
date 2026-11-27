@@ -19,6 +19,8 @@ import {
   FaLocationDot,
   FaPaperPlane,
   FaPhone,
+  FaScissors,
+  FaStore,
   FaWandMagicSparkles,
   FaXmark,
 } from "react-icons/fa6";
@@ -43,11 +45,9 @@ const socialLinks = [
 ];
 
 const projectOrder = [
-  "Justflip CRM",
-  "Vessel Hierarchy Management System",
-  "Payment Management System",
+  "TapGro Salon",
+  "TapGro Marketplace",
   "Justflip Portal",
-  "Plots In Bangalore",
 ];
 const projects = [...resumeData.projects].sort((a, b) => {
   const indexA = projectOrder.findIndex((title) => a.title.includes(title));
@@ -100,7 +100,7 @@ export default function Home() {
             <span className="brand-mark">S</span>
             <span className="text-sm font-semibold tracking-wide text-white">Shubham Saini</span>
           </a>
-          <div className="hidden items-center gap-7 text-[13px] text-slate-300 lg:flex">
+          <div className="hidden items-center gap-5 text-[13px] text-slate-300 md:flex lg:gap-7">
             <a className="nav-link" href="#home">Home</a>
             <a className="nav-link" href="#about">About</a>
             <a className="nav-link" href="#projects">Projects</a>
@@ -109,7 +109,7 @@ export default function Home() {
             <a className="nav-link" href="#contact">Contact</a>
           </div>
           <button
-            className="mobile-menu-toggle lg:hidden"
+            className="mobile-menu-toggle md:hidden"
             type="button"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={menuOpen}
@@ -122,7 +122,7 @@ export default function Home() {
           </a>
         </nav>
         {menuOpen && (
-          <div className="mobile-menu lg:hidden">
+          <div className="mobile-menu md:hidden">
             {[
               ["Home", "#home"],
               ["About", "#about"],
@@ -153,8 +153,7 @@ export default function Home() {
               {resumeData.role}
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
-              I craft responsive, accessible, and high-performance web experiences
-              with React, Next.js, and modern web technologies.
+              {resumeData.subtitle}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a className="button-primary" href="#contact">Hire Me <FaArrowUpRightFromSquare /></a>
@@ -232,7 +231,14 @@ export default function Home() {
             <article className={`project-card ${index === 0 ? "project-card-featured" : ""}`} key={project.title}>
               <div className="project-image-wrap">
                 {index === 0 && <span className="featured-pill">Featured</span>}
-                <Image className="project-image" src={assetUrl(project.banner)} alt={`${project.title} project preview`} width={540} height={320} sizes="(min-width: 760px) 33vw, 85vw" unoptimized />
+                {project.banner ? (
+                  <Image className="project-image" src={assetUrl(project.banner)} alt={`${project.title} project preview`} width={540} height={320} sizes="(min-width: 760px) 33vw, 85vw" unoptimized />
+                ) : (
+                  <div className={`project-placeholder project-placeholder-${project.cover}`}>
+                    {project.cover === "salon" ? <FaScissors /> : <FaStore />}
+                    <span>{project.coverLabel}</span>
+                  </div>
+                )}
               </div>
               <div className="flex h-[calc(100%-178px)] flex-col p-4">
                 <h3 className="text-base font-semibold text-white">{project.title}</h3>
@@ -243,7 +249,11 @@ export default function Home() {
                       <Image className="h-5 w-5 object-contain" src={assetUrl(tech.logo)} alt={tech.name} title={tech.name} key={tech.name} width={20} height={20} unoptimized />
                     ))}
                   </div>
-                  <a className="project-link" href={project.live} target="_blank" rel="noreferrer" aria-label={`View ${project.title}`}><FaArrowUpRightFromSquare /></a>
+                  {project.live ? (
+                    <a className="project-link" href={project.live} target="_blank" rel="noreferrer" aria-label={`View ${project.title}`}><FaArrowUpRightFromSquare /></a>
+                  ) : (
+                    <span className="project-link-placeholder">Live URL unavailable</span>
+                  )}
                 </div>
               </div>
             </article>
@@ -303,7 +313,7 @@ export default function Home() {
         <div>
           <span className="section-label">About me</span>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">Hi, I’m Shubham <span className="text-violet-300">👋</span></h2>
-          <p className="mt-4 text-sm leading-6 text-slate-300">{resumeData.subtitle} I enjoy turning complex problems into simple, elegant solutions.</p>
+          <p className="mt-4 text-sm leading-6 text-slate-300">{resumeData.subtitle}</p>
           <ul className="mt-5 space-y-2 text-sm text-slate-300">
             {["Problem Solver", "Team Collaborator", "Continuous Learner"].map((item) => <li className="flex items-center gap-2" key={item}><FaCheck className="text-xs text-violet-300" /> {item}</li>)}
           </ul>

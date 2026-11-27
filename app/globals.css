@@ -408,6 +408,45 @@ textarea:focus-visible {
   object-fit: cover;
 }
 
+.project-placeholder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid rgba(160, 177, 225, 0.22);
+  border-radius: 11px;
+  color: #f3edff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.project-placeholder svg {
+  color: #d3a8ff;
+  font-size: 35px;
+  filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.7));
+}
+
+.project-placeholder-salon {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(181, 90, 231, 0.38), transparent 38%),
+    linear-gradient(135deg, #33234d, #161d38 75%);
+}
+
+.project-placeholder-marketplace {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(54, 166, 194, 0.3), transparent 40%),
+    linear-gradient(135deg, #173946, #18213e 75%);
+}
+
+.project-link-placeholder {
+  color: #8792af;
+  font-size: 10px;
+}
+
 .featured-pill {
   position: absolute;
   z-index: 1;
@@ -645,6 +684,13 @@ textarea:focus-visible {
 @media (min-width: 760px) {
   .project-rail {
     grid-auto-columns: calc((100% - 32px) / 3);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu,
+  .mobile-menu-toggle {
+    display: none;
   }
 }
 

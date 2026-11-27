@@ -1,29 +1,23 @@
-import { FaCode, FaLaptopCode, FaDatabase, FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaTools, FaEnvelopeOpenText, } from "react-icons/fa"
-import { SiTailwindcss, SiMui, SiRedux, SiJavascript, SiTypescript, SiMongodb, SiSqlite, SiNextdotjs, SiShadcnui, SiSupabase, SiReactquery } from "react-icons/si"
+import { FaCode, FaLaptopCode, FaDatabase, FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaGitAlt, FaTools, FaCreditCard, FaLock } from "react-icons/fa"
+import { SiTailwindcss, SiMui, SiRedux, SiJavascript, SiTypescript, SiMongodb, SiSqlite, SiNextdotjs, SiShadcnui, SiReactquery, SiPostman, SiVercel, SiGithub } from "react-icons/si"
 import { MdWork, MdSchool, MdEmail, MdPhone, MdLocationOn } from "react-icons/md"
 import { BsLinkedin, BsGithub } from "react-icons/bs"
 import { GiBearHead } from "react-icons/gi";
-import instaBanner from "../assets/insta_banner.png";
-import jobbyBanner from "../assets/jobby_banner.png";
-import nxtwatchBanner from "../assets/nxtwatch_banner.png";
-import justflipPlotsBanner from '../assets/justflipPlotsBanner.jpg';
+import { VscVscode } from "react-icons/vsc"
 import justflipBanner from '../assets/justflipBanner.jpg';
-import CRMBanner from '../assets/CRMBanner.jpg';
-import bear from "../assets/zustand.png";
-import paymentBanner from "../assets/paymentBanner.png";
-import vesselBanner from "../assets/vesselBanner.png";
 
 // import Hero from "../assets/hero.png"
 
 const resumeData = {
   name: "Shubham",
   surname: "Saini",
-  role: "Full-Stack Web Developer",
-  subtitle: "I design and build modern, scalable, and user-friendly applications.",
+  role: "Frontend / Full-Stack Developer",
+  subtitle:
+    "I build production web applications with Next.js, React, TypeScript, Node.js, and REST APIs. My work spans SaaS platforms, marketplaces, D2C and e-commerce products, authentication, payment integrations, and responsive client websites.",
   stats: [
-    { label: "Projects", value: "4+ Full-Stack Applications Delivered", icon: FaCode },
-    { label: "Clients", value: "Open Source & Training Work", icon: MdWork },
-    { label: "Experience", value: "1+ Years of Practical Development", icon: FaLaptopCode },
+    { label: "Featured Products", value: "3+ Production Applications", icon: FaCode },
+    { label: "Active Users", value: "5K+ Users Served", icon: MdWork },
+    { label: "Experience", value: "1.5+ Years of Professional Development", icon: FaLaptopCode },
     { label: "Technologies", value: "10+ Modern Tools & Frameworks", icon: FaTools },
   ],
   services: [
@@ -52,185 +46,79 @@ const resumeData = {
     { name: "Tailwind CSS", icon: SiTailwindcss, level: 98 },
     { name: "Material UI", icon: SiMui, level: 95 },
     { name: "ShadCN UI", icon: SiShadcnui, level: 90 },
-    { name: "TanStack Query/React Query", icon: SiReactquery, level: 90 },
+    { name: "TanStack Query", icon: SiReactquery, level: 90 },
     { name: "Python", icon: FaPython, level: 90 },
     { name: "HTML", icon: FaHtml5, level: 99 },
     { name: "CSS", icon: FaCss3Alt, level: 95 },
     { name: "Node.js", icon: FaNodeJs, level: 94 },
     { name: "Express.js", icon: FaNodeJs, level: 96 },
-    { name: "Bootstrap", icon: FaBootstrap, level: 95 },
-    { name: "MySQL", icon: SiSqlite, level: 95 },
-    { name: "Redux", icon: SiRedux, level: 96 },
+    { name: "REST APIs", icon: FaCode, level: 99 },
+    { name: "Redux Toolkit", icon: SiRedux, level: 96 },
     { name: "MongoDB", icon: SiMongodb, level: 90 },
-    { name: "API Testing", icon: FaCode, level: 99 },
+    { name: "SQLite", icon: SiSqlite, level: 95 },
+    { name: "Razorpay", icon: FaCreditCard, level: 90 },
+    { name: "Authentication", icon: FaLock, level: 90 },
     { name: "Git", icon: FaGitAlt, level: 99 },
-    { name: "Manual Testing", icon: FaCode, level: 99 },
+    { name: "GitHub", icon: SiGithub, level: 99 },
+    { name: "Postman", icon: SiPostman, level: 90 },
+    { name: "VS Code", icon: VscVscode, level: 90 },
+    { name: "Vercel", icon: SiVercel, level: 90 },
   ],
   projects: [
     {
-      title: "Insta Share (Instagram Clone)",
-      banner: instaBanner,
+      title: "TapGro Salon Management SaaS",
+      cover: "salon",
+      coverLabel: "Salon management",
+      tech: [
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "REST APIs", logo: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png" },
+      ],
+      desc: "Developed a SaaS salon management platform with responsive interfaces, authentication workflows, API integrations, and core salon management features using Next.js, React, and TypeScript.",
+    },
+    {
+      title: "TapGro Marketplace – Beauty Products",
+      cover: "marketplace",
+      coverLabel: "Beauty products marketplace",
       tech: [
         { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Razorpay", logo: "https://razorpay.com/favicon.png" },
+        { name: "REST APIs", logo: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png" },
+      ],
+      desc: "Built a responsive beauty-products marketplace with product discovery, authentication, cart functionality, Razorpay payments, and API-driven workflows.",
+    },
+    {
+      title: "Justflip Portal – Real Estate Marketplace",
+      banner: justflipBanner,
+      coverLabel: "Real estate marketplace",
+      tech: [
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Redux Toolkit", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
         { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
         { name: "Material UI", logo: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       ],
-      desc: `Developed a fully functional, responsive social media web application inspired by Instagram, featuring User Profile viewing, post feeds, search functionality, likes, and comments. 
-            This module specifically handles dynamic profile rendering based on URL parameters, API-driven data fetching, and optimized rendering performance.
-
-            Use these credentials for Demo:
-            Username: rahul,
-            Password: rahul@2021.`,
-      live: "https://shubhaminsta.ccbp.tech",
-    },
-    {
-      title: "Jobby App – Job Search Platform",
-      banner: jobbyBanner,
-      tech: [
-        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-      ],
-      desc: `The Jobby App is a fully responsive job search platform that allows users to explore, search, and filter job listings in real-time. 
-            It integrates user authentication, dynamic filtering, and API-driven data fetching to deliver a smooth and interactive experience. 
-
-            Use these credentials for Demo:
-            Username: rahul,
-            Password: rahul@2021.`,
-      live: "https://jobbyshubham.ccbp.tech",
-    },
-    {
-      title: "Nxt Watch (YouTube Clone)",
-      banner: nxtwatchBanner,
-      tech: [
-        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-        { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      ],
-      desc: `The Nxt Watch App is a fully responsive YouTube clone where users can browse, search, and watch videos. 
-        It includes features like dark/light mode toggle, authentication using JWT tokens, save/like/dislike videos, and protected routes. 
-        Seamlessly integrates with APIs for video data and user actions.
-
-        Use these credentials for Demo:
-        Username: rahul,
-        Password: rahul@2021.`,
-      live: "https://shubhamwatchnxt.ccbp.tech",
-    },
-    {
-      title: "Plots In Bangalore",
-      banner: justflipPlotsBanner,
-      tech: [
-        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-        { name: "Vercel", logo: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" },
-        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
-      ],
-      desc: `A modern real-estate platform built with Next.js for discovering premium plotted developments across Bengaluru. 
-            Features include advanced filtering (location, price, amenities), mobile-responsive carousels, developer listings, reviews, 
-            and an optimized UI powered by Tailwind CSS. Integrated with Next.js Image Optimization and deployed on Vercel for fast, 
-            SEO-friendly performance and seamless production delivery.`,
-      live: "https://www.plotsinbanglore.com/"
-    },
-    {
-      title: "Justflip Portal – Real Estate",
-      banner: justflipBanner,
-      tech: [
-        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-        { name: "Vercel", logo: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" }
-      ],
-      desc: `Full-featured real-estate marketplace for property discovery, built with Next.js and Node.js. The portal supports listing creation, search with faceted filters, server-side rendering for SEO, dynamic property pages, and optimized image loading. Integrated user authentication, contact forms, and analytics for conversion tracking.`,
+      desc: "Developed a property exploration platform with advanced filtering, project listings, SEO-focused pages, and reusable responsive UI using React, Redux Toolkit, Tailwind CSS, and Material UI.",
       live: "https://justflip.in/"
     },
-    // {
-    //   title: "Justflip Dashboard – Agent & Admin Console",
-    //   banner: justflipDashboardBanner,
-    //   tech: [
-    //     { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    //     { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-    //     { name: "Chart.js", logo: "https://www.vectorlogo.zone/logos/chartjs/chartjs-icon.svg" },
-    //     { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-    //     { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    //     { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }
-    //   ],
-    //   desc: `A powerful admin and agent dashboard providing real-time analytics, lead management, property approval workflows, and reporting. Features include role-based access, charts & KPIs for sales and traffic, bulk import/export, and integrations with messaging and email services for notifications.`,
-    //   live: "https://justflip-dashboard.example.com"
-    // },
-    {
-      title: "Justflip CRM – Leads & Sales ",
-      banner: CRMBanner,
-      tech: [
-        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Zustand", logo: bear },
-        { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-      ],
-      desc: `Customer Relationship Management system tailored for real-estate teams. Manages leads, automated follow-ups, pipeline stages, reminders, and agent assignments. Includes email & SMS integrations, lead scoring, note history, and a lightweight rules engine for automations. Demo Credentials - Username: developer@markanthony.co.in  Password: 1234.`,
-      live: "https://crm-testing-markanthony.vercel.app/login"
-    },
-    {
-      title: "Vessel Hierarchy Management System",
-      banner: vesselBanner,
-      tech: [
-        // { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-        { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-        { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-        { name: "ShadCn UI", logo: "https://ui.shadcn.com/favicon.ico" },
-        { name: "React Flow", logo: "https://reactflow.dev/favicon.ico" },
-      ],
-      desc: `An interactive vessel hierarchy management system built with React and Next.js. 
-              Visualizes complex vessel structures using React Flow with dynamic node relationships 
-              and real-time updates. Features drag-and-drop hierarchy editing, role-based access, 
-              and scalable state management using Redux and TypeScript for high performance.`
-      ,
-      live: "https://vessel-hierarchy-tree.vercel.app"
-    },
-    {
-      title: "Payment Management System",
-      banner: paymentBanner,
-      tech: [
-        { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-        { name: "ShadCn UI", logo: "https://ui.shadcn.com/favicon.ico" },
-        { name: "Zustand", logo: bear },
-        { name: "TanStack Query", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/reactquery.svg" },
-        { name: "Supabase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
-        // { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-      ],
-      desc: `A modern payment management platform for tracking transactions and billing workflows. 
-            Built with React and TypeScript, featuring lightweight state management using Zustand 
-            and a clean UI with ShadCn UI and Tailwind CSS. Integrated with Supabase for authentication, 
-            real-time data updates, and secure backend operations.`
-      ,
-      live: "https://payment-management-dashboard.vercel.app"
-    }
-
-
   ],
   experience: [
     {
-      company: "MARK ANTHONY VENTURES",
+      company: "TapGro Technologies Pvt. Ltd.",
       role: "Frontend Developer",
-      years: "Jun 2025 - Ongoing",
+      years: "Feb 2026 - Present · India",
       details:
-        "Built responsive web apps with React.js, Redux Toolkit, and Tailwind CSS. Created reusable UI components, implemented features with React hooks & APIs, assisted in micro-frontend integration, followed Git workflows and Agile.",
+        "Developed production applications with Next.js, React, and TypeScript across SaaS, marketplace, D2C/e-commerce, and client projects. Built salon management interfaces, authentication and API workflows, product discovery and cart experiences, Razorpay checkout, and reusable responsive client websites.",
+      icon: MdWork,
+    },
+    {
+      company: "Mark Anthony Ventures",
+      role: "Frontend Developer",
+      years: "Jun 2025 - Feb 2026 · Bengaluru, IN",
+      details:
+        "Built responsive real-estate applications with React, Next.js, Redux Toolkit, TypeScript, Zustand, Material UI, and Tailwind CSS, serving over 5K active users. Developed multi-step property upload and update forms and enhanced SEO-focused property listings and location modules.",
       icon: MdWork,
     },
   ],
@@ -238,25 +126,13 @@ const resumeData = {
     {
       school: "Nxtwave Disruptive Technologies",
       degree: "Industry Ready Certification in Full-stack Development",
-      year: "Jan 2023 - Ongoing",
+      year: "Jan 2023 - May 2025",
       icon: MdSchool,
     },
     {
-      school: "MJP Rohilkhand University, Bareilly",
-      degree: "BSc Mathematics (56%)",
+      school: "Mahatma Jyotiba Phule Rohilkhand University, Bareilly",
+      degree: "B.Sc. Mathematics",
       year: "2018 - 2021",
-      icon: MdSchool,
-    },
-    {
-      school: "Hilton Convent Senior Secondary School, Amroha",
-      degree: "Intermediate MPC (68%)",
-      year: "2017 - 2018",
-      icon: MdSchool,
-    },
-    {
-      school: "Hilton Convent Senior Secondary School, Amroha",
-      degree: "Secondary School Certificate (9.4 CGPA)",
-      year: "2015 - 2016",
       icon: MdSchool,
     },
   ],
